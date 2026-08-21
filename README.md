@@ -1,4 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![React](https://img.shields.io/badge/React-grey?style=flat&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-gray?style=flat&logo=typescript)
+![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-gray?style=flat&logo=cloudflare)
 
 # Mining utils
 
