@@ -43,9 +43,11 @@ export default function Form() {
         <Card.Title className="text-2xl pb-2">New session</Card.Title>
       </Card.Header>
       <Card.Content>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <DataInputs />
-          <ValueInputs />
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid grid-cols-1 xl:grid-cols-2 xl:items-start">
+            <DataInputs />
+            <ValueInputs />
+          </div>
           <Button type="submit" fullWidth variant="primary">
             Save results
           </Button>

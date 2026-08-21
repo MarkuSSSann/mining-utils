@@ -10,7 +10,7 @@ export default function ValueInputs() {
   const updateInputs = useSetAtom(updateFormInputAtom);
 
   return (
-    <fieldset className="border-t border-default-200 pt-6">
+    <fieldset className="xl:border-t-transparent xl:border-l xl:pl-3 border-t border-default-200">
       <legend className="mb-4 text-lg font-semibold text-foreground">
         Resources
       </legend>

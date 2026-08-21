@@ -16,7 +16,10 @@ export default function DataInputs() {
   const updateTime = useSetAtom(updateTimeAtom);
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+    <fieldset className="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-1 xl:border-none border-t border-default-200">
+      <legend className="mb-4 text-lg font-semibold text-foreground">
+        Session data
+      </legend>
       <Select
         aria-label="Strategy"
         value={formData.strategy}
@@ -43,8 +46,8 @@ export default function DataInputs() {
         placeholder="None"
         selectionMode="multiple"
         onChange={(keys) => updateEnchantment({ keys })}>
-        <Label>Enchantments used</Label>
-        <Select.Trigger>
+        <Label htmlFor="enchantment-select">Enchantments used</Label>
+        <Select.Trigger id="enchantment-select">
           <Select.Value />
           <Select.Indicator />
         </Select.Trigger>
@@ -64,11 +67,13 @@ export default function DataInputs() {
       </Select>
       <div className="flex flex-col">
         <NumberField
+          id="time-input"
+          aria-label="time-input"
           isRequired
           minValue={0}
           value={formData.timeMinutes}
           onChange={(e) => updateTime({ time: e })}>
-          <Label>Time tracked (minutes)</Label>
+          <Label htmlFor="time-input">Time tracked (minutes)</Label>
           <NumberField.Group>
             <NumberField.DecrementButton />
             <NumberField.Input />
@@ -76,6 +81,6 @@ export default function DataInputs() {
           </NumberField.Group>
         </NumberField>
       </div>
-    </div>
+    </fieldset>
   );
 }

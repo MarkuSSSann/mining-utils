@@ -11,11 +11,10 @@ import { createResourceChart } from "../utils/chartsFabric";
 
 export default function Charts() {
   const records = useAtomValue(getRecordsAtom);
+
   const { resolvedTheme } = useTheme();
   const chartTheme: "ag-default" | "ag-default-dark" =
     resolvedTheme === "dark" ? "ag-default-dark" : "ag-default";
-
-  console.log("resolvedTheme :>> ", resolvedTheme);
 
   const chartsData: ChartData[] = records.map((record) => ({
     id: record.id,
