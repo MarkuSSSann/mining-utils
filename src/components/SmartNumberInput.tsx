@@ -50,7 +50,11 @@ export default function SmartNumberInput({
     inputValue.trim() !== "" && isNaN(parseCompactNumber(inputValue));
 
   return (
-    <TextField isInvalid={isInvalid} value={inputValue} onChange={handleChange}>
+    <TextField
+      isInvalid={isInvalid}
+      value={inputValue}
+      onChange={handleChange}
+      className="min-w-12">
       {label !== "" && <Label />}
       <Input placeholder="e.g. 4.6b or 3000" {...props} />
       {isInvalid && <FieldError>bad format</FieldError>}
