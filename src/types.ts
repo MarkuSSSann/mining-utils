@@ -12,7 +12,7 @@ export type TextField = "strategy" | "enchantment" | "timeMinutes";
 export interface FormData {
   strategy: Strategies;
   enchantment: Enchantments[];
-  timeMinutes: number;
+  time: number;
   before: ResourceValues;
   after: ResourceValues;
 }
@@ -21,7 +21,7 @@ export interface MiningRecord {
   id: string;
   strategy: Strategies;
   enchantment: Enchantments[];
-  timeMinutes: number;
+  time: number;
   net: ResourceValues;
 }
 

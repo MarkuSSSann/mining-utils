@@ -21,7 +21,7 @@ export default function Charts() {
     ...Object.fromEntries(
       RESOURCES.map((resource) => [
         `${resource}PerMinute`,
-        Number((record.net[resource] ?? 0 / record.timeMinutes).toFixed(2)),
+        Number((record.net[resource] ?? 0 / record.time).toFixed(2)),
       ]),
     ),
   }));

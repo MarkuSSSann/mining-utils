@@ -14,6 +14,7 @@ import { useMemo } from "react";
 import valueFormatter from "../utils/valueRenderer";
 import { divideAndCapitalize } from "@utils/text";
 import { useTheme } from "next-themes";
+import { formatTime } from "@utils/numbers";
 
 export default function RecordsTable() {
   const records = useAtomValue(getRecordsAtom);
@@ -31,9 +32,13 @@ export default function RecordsTable() {
     {
       field: "enchantment",
       headerName: "Enchantment",
-      valueFormatter: (param) => param.data?.enchantment?.join(", ") || "-",
+      valueFormatter: (param) => param.data?.enchantment?.join(", ") || "---",
     },
-    { field: "timeMinutes", headerName: "Time (minutes)" },
+    {
+      field: "time",
+      headerName: "Time",
+      valueFormatter: (param) => formatTime(param.data?.time ?? 0),
+    },
 
     ...RESOURCES.map(
       (res): ColDef<MiningRecord> => ({

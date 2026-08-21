@@ -1,10 +1,4 @@
-import {
-  Button,
-  Card,
-  IconChevronRight,
-  Modal,
-  useOverlayState,
-} from "@heroui/react";
+import { Button, Card, useOverlayState } from "@heroui/react";
 import { useAtomValue, useSetAtom } from "jotai";
 import type { FormEvent } from "react";
 import { getFormAtom, resetFormAtom } from "../../context/form";
@@ -14,7 +8,6 @@ import type { ResourceValues } from "@types";
 import DataInputs from "./DataInputs";
 import ValueInputs from "./ValueInputs";
 import IconButton from "@components/IconButton";
-import { Icon } from "@iconify/react";
 import SessionSettingsModal from "./SessionSettingsModal";
 
 export default function Form() {
@@ -39,7 +32,7 @@ export default function Form() {
       id: dateId,
       strategy: formData.strategy,
       enchantment: formData.enchantment,
-      timeMinutes: Number(formData.timeMinutes),
+      time: Number(formData.time),
       net: netResources,
     };
 

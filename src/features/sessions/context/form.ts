@@ -70,9 +70,9 @@ export const updateTimeAtom = atom(
   null,
   (_, set, { time }: { time: number | null }) => {
     if (time) {
-      set(__formAtom, (prev) => ({ ...prev, timeMinutes: time }));
+      set(__formAtom, (prev) => ({ ...prev, time: time }));
     } else {
-      set(__formAtom, (prev) => ({ ...prev, timeMinutes: 0 }));
+      set(__formAtom, (prev) => ({ ...prev, time: 0 }));
     }
   },
 );

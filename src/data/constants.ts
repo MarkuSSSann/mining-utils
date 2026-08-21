@@ -29,7 +29,7 @@ export const ENCHANTMENTS = [
 export const DEFAULT_FORM: FormData = {
   strategy: "top-to-down",
   enchantment: [],
-  timeMinutes: 0,
+  time: 0,
   before: {
     orbs: null,
     gems: null,

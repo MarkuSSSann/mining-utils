@@ -5,9 +5,7 @@ import {
   getFormAtom,
   updateEnchantmentAtom,
   updateStrategyAtom,
-  updateTimeAtom,
 } from "../../context/form";
-import Timer from "@components/Timer";
 import SessionTimeInput from "./SessionTimeInput";
 
 export default function DataInputs() {
@@ -67,7 +65,7 @@ export default function DataInputs() {
           </ListBox>
         </Select.Popover>
       </Select>
-      <SessionTimeInput formTime={formData.timeMinutes} />
+      <SessionTimeInput formTime={formData.time} />
     </fieldset>
   );
 }
