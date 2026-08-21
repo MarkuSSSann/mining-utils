@@ -1,4 +1,4 @@
-import { Select, ListBox, Label, NumberField } from "@heroui/react";
+import { Select, ListBox, Label } from "@heroui/react";
 import { STRATEGIES, ENCHANTMENTS } from "@data/constants.ts";
 import { useAtomValue, useSetAtom } from "jotai";
 import {
@@ -7,23 +7,25 @@ import {
   updateStrategyAtom,
   updateTimeAtom,
 } from "../../context/form";
+import Timer from "@components/Timer";
+import SessionTimeInput from "./SessionTimeInput";
 
 export default function DataInputs() {
   const formData = useAtomValue(getFormAtom);
 
   const updateStrategy = useSetAtom(updateStrategyAtom);
   const updateEnchantment = useSetAtom(updateEnchantmentAtom);
-  const updateTime = useSetAtom(updateTimeAtom);
 
   return (
-    <fieldset className="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-1 xl:border-none border-t border-default-200">
+    <fieldset className="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-1 xl:border-none border-t border-default-200 md:pb-0 pb-2">
       <legend className="mb-4 text-lg font-semibold text-foreground">
         Session data
       </legend>
       <Select
         aria-label="Strategy"
         value={formData.strategy}
-        onChange={(key) => updateStrategy({ key })}>
+        onChange={(key) => updateStrategy({ key })}
+        className="min-w-36">
         <Label>Mining strategy</Label>
         <Select.Trigger>
           <Select.Value />
@@ -65,22 +67,7 @@ export default function DataInputs() {
           </ListBox>
         </Select.Popover>
       </Select>
-      <div className="flex flex-col">
-        <NumberField
-          id="time-input"
-          aria-label="time-input"
-          isRequired
-          minValue={0}
-          value={formData.timeMinutes}
-          onChange={(e) => updateTime({ time: e })}>
-          <Label htmlFor="time-input">Time tracked (minutes)</Label>
-          <NumberField.Group>
-            <NumberField.DecrementButton />
-            <NumberField.Input />
-            <NumberField.IncrementButton />
-          </NumberField.Group>
-        </NumberField>
-      </div>
+      <SessionTimeInput formTime={formData.timeMinutes} />
     </fieldset>
   );
 }

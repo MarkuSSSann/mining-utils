@@ -1,4 +1,10 @@
-import { Button, Card } from "@heroui/react";
+import {
+  Button,
+  Card,
+  IconChevronRight,
+  Modal,
+  useOverlayState,
+} from "@heroui/react";
 import { useAtomValue, useSetAtom } from "jotai";
 import type { FormEvent } from "react";
 import { getFormAtom, resetFormAtom } from "../../context/form";
@@ -7,6 +13,9 @@ import { RESOURCES } from "@data/constants.ts";
 import type { ResourceValues } from "@types";
 import DataInputs from "./DataInputs";
 import ValueInputs from "./ValueInputs";
+import IconButton from "@components/IconButton";
+import { Icon } from "@iconify/react";
+import SessionSettingsModal from "./SessionSettingsModal";
 
 export default function Form() {
   const formData = useAtomValue(getFormAtom);
@@ -37,22 +46,36 @@ export default function Form() {
     setRecord({ record: newRecord });
     resetForm();
   };
+
+  const modalState = useOverlayState();
+
   return (
-    <Card>
-      <Card.Header>
-        <Card.Title className="text-2xl pb-2">New session</Card.Title>
-      </Card.Header>
-      <Card.Content>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-1 xl:grid-cols-2 xl:items-start">
-            <DataInputs />
-            <ValueInputs />
-          </div>
-          <Button type="submit" fullWidth variant="primary">
-            Save results
-          </Button>
-        </form>
-      </Card.Content>
-    </Card>
+    <>
+      <SessionSettingsModal state={modalState} />
+      <Card>
+        <Card.Header className="flex flex-row">
+          <Card.Title className="text-2xl pb-2">New session</Card.Title>
+          <IconButton
+            icon="mdi:cog"
+            iconSize={20}
+            size="sm"
+            variant="tertiary"
+            className="ml-auto"
+            onToggle={modalState.open}
+          />
+        </Card.Header>
+        <Card.Content>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid grid-cols-1 xl:grid-cols-2 xl:items-start">
+              <DataInputs />
+              <ValueInputs />
+            </div>
+            <Button type="submit" fullWidth variant="primary">
+              Save results
+            </Button>
+          </form>
+        </Card.Content>
+      </Card>
+    </>
   );
 }

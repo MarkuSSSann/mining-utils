@@ -1,5 +1,5 @@
 import { Button, Chip } from "@heroui/react";
-import ThemeSwitcher from "./ThemeSwitcher";
+import ThemeSwitcher from "../components/ThemeSwitcher";
 import { Icon } from "@iconify/react";
 
 import { version } from "../../package.json";

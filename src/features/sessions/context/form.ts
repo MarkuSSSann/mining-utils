@@ -7,8 +7,10 @@ import type {
   ResourceSection,
   Strategies as Strategy,
   TextField,
+  TimeInputStyle,
 } from "@types";
 import { parseCompactNumber } from "@utils/numbers";
+import { atomWithStorage } from "jotai/utils";
 
 const __formAtom = atom(DEFAULT_FORM);
 
@@ -78,3 +80,17 @@ export const updateTimeAtom = atom(
 export const resetFormAtom = atom(null, (_, set) => {
   set(__formAtom, DEFAULT_FORM);
 });
+
+const __timeInputStyleAtom = atomWithStorage<TimeInputStyle>(
+  "time-input-style",
+  "stopwatch",
+);
+
+export const getTimeInputStyle = atom((get) => get(__timeInputStyleAtom));
+
+export const setTimeInputStyle = atom(
+  null,
+  (_, set, { style }: { style: TimeInputStyle }) => {
+    set(__timeInputStyleAtom, style);
+  },
+);

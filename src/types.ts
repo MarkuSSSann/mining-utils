@@ -1,3 +1,4 @@
+import type { ButtonProps } from "@heroui/react";
 import type { ENCHANTMENTS, RESOURCES, STRATEGIES } from "./data/constants.ts";
 
 export type Resource = (typeof RESOURCES)[number];
@@ -28,3 +29,13 @@ export type ChartData = {
   id: string;
   [key: string]: number | string;
 };
+
+export type TimeInputStyle = "stopwatch" | "input" | "range";
+
+export type IconButtonProps = {
+  onToggle?: () => void;
+  icon: string;
+  iconSize?: number;
+  onPress?: never;
+  "aria-label"?: string;
+} & Omit<ButtonProps, "onPress">;
