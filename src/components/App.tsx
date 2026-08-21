@@ -1,4 +1,5 @@
 import Sessions from "../features/sessions";
+import Footer from "./Footer";
 import Header from "./Header";
 
 export default function App() {
@@ -7,6 +8,7 @@ export default function App() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
         <Header />
         <Sessions />
+        <Footer />
       </div>
     </main>
   );
