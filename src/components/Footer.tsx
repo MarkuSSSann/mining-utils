@@ -1,9 +1,8 @@
+import { GITHUB_REPO_URL } from "@data/constants";
 import { version } from "../../package.json";
 import { Icon } from "@iconify/react";
 
 export default function Footer() {
-  const githubRepoUrl = "https://github.com/MarkuSSSann/mining-utils";
-
   return (
     <footer className="mt-auto py-6 border-t border-default-200 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-default-500">
       <div className="flex flex-col gap-1 text-center md:text-left max-w-xl">
@@ -18,7 +17,7 @@ export default function Footer() {
 
       <div className="flex items-center gap-4">
         <a
-          href={githubRepoUrl}
+          href={GITHUB_REPO_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 hover:text-foreground transition-colors">

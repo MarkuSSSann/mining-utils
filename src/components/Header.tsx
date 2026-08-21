@@ -3,10 +3,9 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import { Icon } from "@iconify/react";
 
 import { version } from "../../package.json";
+import { GITHUB_REPO_URL } from "@data/constants";
 
 export default function Header() {
-  const githubRepoUrl = "https://github.com/MarkuSSSann/mining-utils";
-
   return (
     <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 py-4 border-b border-default-200">
       <div className="flex flex-col gap-1">
@@ -35,7 +34,7 @@ export default function Header() {
             className="cursor-pointer"
             size="sm"
             variant="tertiary"
-            onClick={() => window.open(githubRepoUrl, "_blank")}>
+            onClick={() => window.open(GITHUB_REPO_URL, "_blank")}>
             <Icon icon="mdi:github" className="text-xl" />
           </Button>
           <ThemeSwitcher />

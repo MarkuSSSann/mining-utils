@@ -1,5 +1,7 @@
 import type { FormData } from "../types";
 
+export const GITHUB_REPO_URL = "https://github.com/MarkuSSSann/mining-utils";
+
 export const RESOURCES = [
   "orbs",
   "gems",
