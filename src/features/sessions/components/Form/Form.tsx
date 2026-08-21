@@ -26,7 +26,7 @@ export default function Form() {
     });
     const dateNow = new Date();
 
-    const dateId = `${dateNow.getHours()}-${dateNow.getMinutes()}-${dateNow.getSeconds()}`;
+    const dateId = `${dateNow.getFullYear()}-${dateNow.getMonth()}-${dateNow.getDate()}_${dateNow.getHours()}:${dateNow.getMinutes()}:${dateNow.getSeconds()}`;
 
     const newRecord = {
       id: dateId,
