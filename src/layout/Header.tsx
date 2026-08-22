@@ -13,7 +13,7 @@ export default function Header() {
           <h1 className="text-2xl md:text-3xl font-bold text-foreground">
             Mining utils
           </h1>
-          <Chip className="hidden md:flex" size="sm">
+          <Chip className="hidden md:flex px-2 py-0.5 rounded-lg" size="sm">
             v{version}
           </Chip>
         </div>
