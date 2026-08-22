@@ -54,9 +54,10 @@ export default function SmartNumberInput({
       isInvalid={isInvalid}
       value={inputValue}
       onChange={handleChange}
-      className="min-w-12">
+      className="min-w-12"
+      {...props}>
       {label !== "" && <Label />}
-      <Input placeholder="e.g. 4.6b or 3000" {...props} />
+      <Input placeholder="e.g. 4.6b or 3000" />
       {isInvalid && <FieldError>bad format</FieldError>}
     </TextField>
   );
