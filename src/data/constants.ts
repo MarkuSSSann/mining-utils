@@ -11,7 +11,13 @@ export const RESOURCES = [
   "beacons",
 ] as const;
 
-export const STRATEGIES = ["mole", "top-to-down", "sides"] as const;
+export const STRATEGIES = [
+  "mole",
+  "top-to-down",
+  "sides",
+  "stripes",
+  "shift-mine",
+] as const;
 
 export const ENCHANTMENTS = [
   "Dragon Burst",
