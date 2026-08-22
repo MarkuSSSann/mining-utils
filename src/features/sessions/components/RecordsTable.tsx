@@ -73,7 +73,7 @@ export default function RecordsTable() {
   return (
     <Card>
       <Card.Header>
-        <Card.Title>History table</Card.Title>
+        <Card.Title className="text-2xl pb-2">History table</Card.Title>
       </Card.Header>
       <Card.Content>
         <div className="h-96 w-full">

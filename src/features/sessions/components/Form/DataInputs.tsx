@@ -15,7 +15,7 @@ export default function DataInputs() {
   const updateEnchantment = useSetAtom(updateEnchantmentAtom);
 
   return (
-    <fieldset className="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-1 xl:border-none border-t border-default-200 md:pb-0 pb-2">
+    <fieldset className="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-1 xl:border-none border-t border-default-200 md:pb-0 pb-2 md:pr-4">
       <legend className="mb-4 text-lg font-semibold text-foreground">
         Session data
       </legend>

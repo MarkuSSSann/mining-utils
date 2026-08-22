@@ -1,4 +1,4 @@
-import { Button, Label, Surface, ToggleButton } from "@heroui/react";
+import { Label, Surface, ToggleButton } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { useStopwatch } from "react-timer-hook";
 import IconButton from "./IconButton";
@@ -45,7 +45,7 @@ export default function Timer({ formTime, updateTime }: Props) {
       <Label isRequired>Timer</Label>
       <div className="flex items-center flex-row">
         <ToggleButton
-          className="rounded-r-none px-3"
+          className="rounded-r-none rounded-l-lg px-3"
           size="md"
           isSelected={isRunning}
           onChange={handleToggle}>

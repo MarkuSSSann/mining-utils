@@ -32,7 +32,8 @@ export default function SessionSettingsModal({ state }: Props) {
                 size="sm">
                 <ToggleButton
                   id="stopwatch"
-                  onPress={() => setTimerStyle({ style: "stopwatch" })}>
+                  onPress={() => setTimerStyle({ style: "stopwatch" })}
+                  className="rounded-l-lg">
                   <Icon icon={"mdi:stopwatch-outline"} />
                   Stopwatch
                 </ToggleButton>
@@ -45,7 +46,8 @@ export default function SessionSettingsModal({ state }: Props) {
                 </ToggleButton>
                 <ToggleButton
                   id="range"
-                  onPress={() => setTimerStyle({ style: "range" })}>
+                  onPress={() => setTimerStyle({ style: "range" })}
+                  className="rounded-r-lg">
                   <ToggleButtonGroup.Separator />
                   <Icon icon={"mdi:ray-start-end"} />
                   Time input range

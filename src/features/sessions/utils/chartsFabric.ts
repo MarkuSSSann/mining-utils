@@ -28,6 +28,7 @@ export function createResourceChart(
         },
       },
     },
+
     series: [
       {
         type: "bar",

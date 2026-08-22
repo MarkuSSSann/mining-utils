@@ -15,14 +15,20 @@ export default function ThemeSwitcher() {
       defaultSelectedKeys={[theme ?? "system"]}
       selectionMode="single"
       size="sm">
-      <ToggleButton id="light" onPress={() => setTheme("light")}>
+      <ToggleButton
+        id="light"
+        onPress={() => setTheme("light")}
+        className="rounded-l-lg">
         <Icon icon={"line-md:sun-rising-loop"} />
       </ToggleButton>
       <ToggleButton id="dark" onPress={() => setTheme("dark")}>
         <ToggleButtonGroup.Separator />
         <Icon icon={"line-md:moon-rising-alt-loop"} />
       </ToggleButton>
-      <ToggleButton id="system" onPress={() => setTheme("system")}>
+      <ToggleButton
+        id="system"
+        onPress={() => setTheme("system")}
+        className="rounded-r-lg">
         <ToggleButtonGroup.Separator />
         <Icon icon={"line-md:monitor"} />
       </ToggleButton>

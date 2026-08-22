@@ -29,15 +29,17 @@ export default function Charts() {
   return (
     <Card>
       <Card.Header>
-        <Card.Title>Charts</Card.Title>
+        <Card.Title className="text-2xl pb-2">Charts</Card.Title>
       </Card.Header>
       <Card.Content>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {RESOURCES.map((resource) => (
-            <AgCharts
-              key={resource}
-              options={createResourceChart(resource, chartsData, chartTheme)}
-            />
+            <div className="rounded-lg border border-transparent overflow-clip">
+              <AgCharts
+                key={resource}
+                options={createResourceChart(resource, chartsData, chartTheme)}
+              />
+            </div>
           ))}
         </div>
       </Card.Content>

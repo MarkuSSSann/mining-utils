@@ -60,3 +60,5 @@ export const NUMBER_SUFFIXES = {
   oc: 1e27,
   no: 1e30,
 } as const;
+
+export const MAX_TIME_IN_SECONDS = 999 * 3600 + 59 * 60 + 59;
