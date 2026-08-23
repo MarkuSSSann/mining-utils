@@ -7,7 +7,7 @@ import { GITHUB_REPO_URL } from "@data/constants";
 
 export default function Header() {
   return (
-    <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 py-4 border-b border-default-200">
+    <header className="sticky top-0 z-20 flex flex-col md:flex-row md:items-center justify-between gap-4 pt-6 border-b border-default-200 bg-background-secondary">
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-3">
           <h1 className="text-2xl md:text-3xl font-bold text-foreground">
