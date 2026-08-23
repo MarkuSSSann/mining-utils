@@ -1,5 +1,5 @@
 import { Card, Button } from "@heroui/react";
-import { RESOURCES } from "@data/constants.ts";
+import { RESOURCES } from "@data/config";
 import { useAtomValue, useSetAtom } from "jotai";
 import { deleteRecordAtom, getRecordsAtom } from "../context/records";
 import type { MiningRecord } from "@types";

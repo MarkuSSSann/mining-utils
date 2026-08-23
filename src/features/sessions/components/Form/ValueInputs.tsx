@@ -1,6 +1,6 @@
 import { useAtomValue, useSetAtom } from "jotai";
 import { getFormAtom, updateFormInputAtom } from "../../context/form";
-import { RESOURCES } from "@data/constants.ts";
+import { RESOURCES } from "@data/config";
 import { divideAndCapitalize } from "@utils/text";
 import SmartNumberInput from "@components/SmartNumberInput";
 

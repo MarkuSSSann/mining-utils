@@ -1,5 +1,5 @@
 import { Select, ListBox, Label } from "@heroui/react";
-import { STRATEGIES, ENCHANTMENTS } from "@data/constants.ts";
+import { STRATEGIES, ENCHANTMENTS } from "@data/config";
 import { useAtomValue, useSetAtom } from "jotai";
 import {
   getFormAtom,

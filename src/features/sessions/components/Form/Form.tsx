@@ -3,7 +3,7 @@ import { useAtomValue, useSetAtom } from "jotai";
 import type { FormEvent } from "react";
 import { getFormAtom, resetFormAtom } from "../../context/form";
 import { setRecordAtom } from "../../context/records";
-import { RESOURCES } from "@data/constants.ts";
+import { RESOURCES } from "@data/config";
 import type { ResourceValues } from "@types";
 import DataInputs from "./DataInputs";
 import ValueInputs from "./ValueInputs";

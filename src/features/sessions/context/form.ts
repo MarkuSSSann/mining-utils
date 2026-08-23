@@ -1,5 +1,6 @@
 import { atom } from "jotai";
-import { DEFAULT_FORM, ENCHANTMENTS, STRATEGIES } from "@data/constants.ts";
+import { DEFAULT_FORM } from "@data/constants.ts";
+import { ENCHANTMENTS, STRATEGIES } from "@data/config";
 
 import type {
   Enchantments as Enchantment,
