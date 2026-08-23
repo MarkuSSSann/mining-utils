@@ -43,9 +43,11 @@ export type IconButtonProps = {
 export type NavItem = {
   id: string;
   title: string;
+  text: string;
   path: string;
   icon?: string;
   category?: string;
+  image?: string;
 };
 
 export type VoteLink = {

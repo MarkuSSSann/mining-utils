@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import HomePage from "@features/home";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
 function Index() {
-  return "home page";
+  return <HomePage />;
 }
