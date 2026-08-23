@@ -2,7 +2,7 @@ import { Card } from "@heroui/react";
 import { useAtomValue } from "jotai";
 
 import { getRecordsAtom } from "../context/records";
-import { RESOURCES } from "@data/constants.ts";
+import { RESOURCES } from "@data/config";
 import type { ChartData } from "@types";
 
 import { AgCharts } from "ag-charts-react";

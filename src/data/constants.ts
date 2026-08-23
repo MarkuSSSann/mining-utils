@@ -2,36 +2,6 @@ import type { FormData } from "../types";
 
 export const GITHUB_REPO_URL = "https://github.com/MarkuSSSann/mining-utils";
 
-export const RESOURCES = [
-  "money",
-  "orbs",
-  "gems",
-  "totalBlocks",
-  "rawBlocks",
-  "beacons",
-] as const;
-
-export const STRATEGIES = [
-  "mole",
-  "top-to-down",
-  "sides",
-  "stripes",
-  "shift-mine",
-] as const;
-
-export const ENCHANTMENTS = [
-  "Dragon Burst",
-  "Explosive Tip",
-  "Laser Enchant",
-  "Zeus Lightning",
-  "Earthquake Strike",
-  "Tnt Rain",
-  "Reversed Dragon",
-  "Warden Rage",
-  "Dragon Rage",
-  "Tengai Shinsei",
-] as const;
-
 export const DEFAULT_FORM: FormData = {
   strategy: "top-to-down",
   enchantment: [],

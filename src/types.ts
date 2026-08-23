@@ -1,5 +1,5 @@
 import type { ButtonProps } from "@heroui/react";
-import type { ENCHANTMENTS, RESOURCES, STRATEGIES } from "./data/constants.ts";
+import type { ENCHANTMENTS, RESOURCES, STRATEGIES } from "@data/config.ts";
 
 export type Resource = (typeof RESOURCES)[number];
 export type Enchantments = (typeof ENCHANTMENTS)[number];
@@ -9,21 +9,21 @@ export type ResourceValues = Record<Resource, number | null>;
 export type ResourceSection = "before" | "after";
 export type TextField = "strategy" | "enchantment" | "timeMinutes";
 
-export interface FormData {
+export type FormData = {
   strategy: Strategies;
   enchantment: Enchantments[];
   time: number;
   before: ResourceValues;
   after: ResourceValues;
-}
+};
 
-export interface MiningRecord {
+export type MiningRecord = {
   id: string;
   strategy: Strategies;
   enchantment: Enchantments[];
   time: number;
   net: ResourceValues;
-}
+};
 
 export type ChartData = {
   id: string;
@@ -39,3 +39,10 @@ export type IconButtonProps = {
   onPress?: never;
   "aria-label"?: string;
 } & Omit<ButtonProps, "onPress">;
+
+export type NavItem = {
+  title: string;
+  path: string;
+  icon?: string;
+  category?: string;
+};
