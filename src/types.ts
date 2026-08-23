@@ -47,3 +47,8 @@ export type NavItem = {
   icon?: string;
   category?: string;
 };
+
+export type VoteLink = {
+  site: string;
+  link: string;
+};

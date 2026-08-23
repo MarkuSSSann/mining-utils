@@ -1,3 +1,4 @@
+import Voting from "@features/voting";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/voting")({
@@ -5,5 +6,5 @@ export const Route = createFileRoute("/voting")({
 });
 
 function RouteComponent() {
-  return <div>Hello "/voting"!</div>;
+  return <Voting />;
 }
