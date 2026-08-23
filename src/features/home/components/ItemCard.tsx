@@ -13,7 +13,7 @@ export default function ItemCard({ item }: Props) {
 
   return (
     <Card
-      className="group relative cursor-pointer rounded-lg border border-transparent overflow-clip transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+      className="bg-default-soft group relative cursor-pointer rounded-lg border border-transparent overflow-clip transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       role="link"
       tabIndex={0}
       onClick={goToItem}
