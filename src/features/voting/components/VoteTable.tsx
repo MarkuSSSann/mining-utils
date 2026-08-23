@@ -1,5 +1,4 @@
 import { VOTING_LINKS } from "@data/config";
-import { Link, useTheme } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import type { VoteLink } from "@types";
 import { MILLISECONDS_IN_MINUTE } from "@data/constants";
@@ -14,6 +13,8 @@ import { AgGridReact } from "ag-grid-react";
 import { useEffect, useMemo, useState } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
 import { markLinksOpenedAtom, getLastOpenedAtom } from "../context/lastOpened";
+import { useTheme } from "next-themes";
+import { Link } from "@heroui/react";
 
 export default function VoteTable() {
   const { resolvedTheme } = useTheme();

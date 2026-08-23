@@ -14,6 +14,7 @@ export default function ThemeSwitcher() {
     <ToggleButtonGroup
       defaultSelectedKeys={[theme ?? "system"]}
       selectionMode="single"
+      disallowEmptySelection
       size="sm">
       <ToggleButton
         id="light"
