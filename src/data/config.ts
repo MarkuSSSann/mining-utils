@@ -69,7 +69,7 @@ export const VOTING_LINKS: VoteLink[] = [
   },
   {
     site: "Best Minecraft servers",
-    link: "https://best-minecraft-servers.co/server-sunrealms.29690/votee",
+    link: "https://best-minecraft-servers.co/server-sunrealms.29690/vote",
   },
   {
     site: "Minecraft servers .co",

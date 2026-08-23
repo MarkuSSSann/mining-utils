@@ -38,3 +38,5 @@ export const NUMBER_SUFFIXES = {
 } as const;
 
 export const MAX_TIME_IN_SECONDS = 999 * 3600 + 59 * 60 + 59;
+
+export const MILLISECONDS_IN_MINUTE = 60 * 1000;
