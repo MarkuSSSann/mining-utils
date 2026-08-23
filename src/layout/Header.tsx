@@ -1,9 +1,3 @@
-import { Button, Chip } from "@heroui/react";
-import ThemeSwitcher from "../components/ThemeSwitcher";
-import { Icon } from "@iconify/react";
-
-import { version } from "../../package.json";
-import { GITHUB_REPO_URL } from "@data/constants";
 import Navbar from "./Navbar";
 import HeaderInfo from "./HeaderInfo";
 
