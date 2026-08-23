@@ -1,6 +1,7 @@
 import { Card } from "@heroui/react";
 import VoteTable from "./components/VoteTable";
 import OpenAll from "./components/OpenAll";
+import NameMC from "./components/NameMC";
 
 export default function index() {
   return (
@@ -29,6 +30,7 @@ export default function index() {
           <VoteTable />
         </Card.Content>
       </Card>
+      <NameMC />
     </>
   );
 }
