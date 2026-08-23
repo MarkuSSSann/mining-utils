@@ -41,6 +41,7 @@ export type IconButtonProps = {
 } & Omit<ButtonProps, "onPress">;
 
 export type NavItem = {
+  id: string;
   title: string;
   path: string;
   icon?: string;

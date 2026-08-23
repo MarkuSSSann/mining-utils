@@ -30,7 +30,12 @@ export const ENCHANTMENTS = [
   "Tengai Shinsei",
 ] as const;
 
-export const NavItems: NavItem[] = [
-  { title: "Session Tracker", path: "/", category: "Analytics" },
-  { title: "Voting", path: "/strategies", category: "Utils" },
+export const NAV_ITEMS: NavItem[] = [
+  {
+    id: "sessions",
+    title: "Session Tracker",
+    path: "/sessions",
+    category: "Analytics",
+  },
+  { id: "voting", title: "Voting", path: "/voting", category: "Utils" },
 ];
