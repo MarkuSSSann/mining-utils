@@ -32,8 +32,14 @@ export const ENCHANTMENTS = [
 
 export const NAV_ITEMS: NavItem[] = [
   {
+    id: "home",
+    title: "Home",
+    path: "/",
+    category: "Utils",
+  },
+  {
     id: "sessions",
-    title: "Session Tracker",
+    title: "Session tracker",
     path: "/sessions",
     category: "Analytics",
   },
