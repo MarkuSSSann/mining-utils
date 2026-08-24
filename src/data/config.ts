@@ -34,16 +34,29 @@ export const NAV_ITEMS: NavItem[] = [
   {
     id: "home",
     title: "Home",
+    text: "Mining utilities for your everyday gameplay.",
     path: "/",
     category: "Utils",
+    icon: "mdi:home",
   },
   {
     id: "sessions",
     title: "Session tracker",
+    text: "Track your mining sessions and compare your progress.",
     path: "/sessions",
     category: "Analytics",
+    icon: "mdi:timelapse",
+    image: "/session-img.png",
   },
-  { id: "voting", title: "Voting", path: "/voting", category: "Utils" },
+  {
+    id: "voting",
+    title: "Voting",
+    text: "Support the server and collect your voting rewards.",
+    path: "/voting",
+    category: "Utils",
+    icon: "mdi:checkbox-outline",
+    image: "/vote-img.png",
+  },
 ] as const;
 
 export const VOTING_LINKS: VoteLink[] = [

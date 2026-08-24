@@ -7,14 +7,16 @@
 
 This app is set of utils for a prison game mode on a minecraft server SunRealms
 
-Intended use for gains calculator is:
+For example, intended use for session calculator is:
 
 1. Try some enchants configuration in game.
-2. Track mining for some time.
-3. Write results before and after and insert it into a fields.
-4. Then try another enchants config.
-5. Write results.
+2. Write results BEFORE mining into a respective fields.
+3. Track mining for some time.
+4. Write results AFTER mining into a respective fields and save results, do not forget about timer.
+5. Repeat process with another enchants config few times.
 6. Compare them to know what config suits best, based on what u need right now.
+
+For any questions, proposal or complains you can DM me in Discord, write an issue on a GitHub or DM me in game - MarkuSSSan.
 
 Not approved by or associated with SunRealms. Fan made utils.
 

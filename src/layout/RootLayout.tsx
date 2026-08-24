@@ -6,8 +6,8 @@ import Header from "./Header";
 export default function RootLayout() {
   return (
     <>
-      <main className="min-h-screen px-4 sm:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6">
+      <main className="flex min-h-screen flex-col px-4 sm:px-8">
+        <div className="mx-auto flex max-w-6xl flex-1 flex-col gap-6">
           <Header />
           <Outlet />
           <Footer />
