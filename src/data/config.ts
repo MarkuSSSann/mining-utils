@@ -57,6 +57,15 @@ export const NAV_ITEMS: NavItem[] = [
     icon: "mdi:checkbox-outline",
     image: "/vote-img.png",
   },
+  {
+    id: "faq",
+    title: "FAQ",
+    text: "Frequently Asked Questions.",
+    path: "/faq",
+    category: "Utils",
+    icon: "mdi:chat-question-outline",
+    image: "/faq-img.jpg",
+  },
 ] as const;
 
 export const VOTING_LINKS: VoteLink[] = [

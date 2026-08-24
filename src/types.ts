@@ -1,5 +1,7 @@
 import type { ButtonProps } from "@heroui/react";
 import type { ENCHANTMENTS, RESOURCES, STRATEGIES } from "@data/config.ts";
+import type zod from "zod";
+import type { FaqMessageSchema } from "@data/schemas";
 
 export type Resource = (typeof RESOURCES)[number];
 export type Enchantments = (typeof ENCHANTMENTS)[number];
@@ -54,3 +56,5 @@ export type VoteLink = {
   site: string;
   link: string;
 };
+
+export type FaqMessage = zod.infer<typeof FaqMessageSchema>;

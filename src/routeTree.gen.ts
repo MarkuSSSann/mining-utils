@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as SessionsRouteImport } from './routes/sessions'
 import { Route as VotingRouteImport } from './routes/voting'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SessionsRoute = SessionsRouteImport.update({
@@ -31,30 +37,34 @@ const VotingRoute = VotingRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/faq': typeof FaqRoute
   '/sessions': typeof SessionsRoute
   '/voting': typeof VotingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/faq': typeof FaqRoute
   '/sessions': typeof SessionsRoute
   '/voting': typeof VotingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/faq': typeof FaqRoute
   '/sessions': typeof SessionsRoute
   '/voting': typeof VotingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sessions' | '/voting'
+  fullPaths: '/' | '/faq' | '/sessions' | '/voting'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sessions' | '/voting'
-  id: '__root__' | '/' | '/sessions' | '/voting'
+  to: '/' | '/faq' | '/sessions' | '/voting'
+  id: '__root__' | '/' | '/faq' | '/sessions' | '/voting'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FaqRoute: typeof FaqRoute
   SessionsRoute: typeof SessionsRoute
   VotingRoute: typeof VotingRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sessions': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FaqRoute: FaqRoute,
   SessionsRoute: SessionsRoute,
   VotingRoute: VotingRoute,
 }
