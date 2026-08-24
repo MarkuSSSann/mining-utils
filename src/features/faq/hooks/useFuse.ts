@@ -17,9 +17,10 @@ export default function useFuse<T>({ data, query, searchKeys }: Props<T>) {
     return new Fuse(data, {
       keys: searchKeys,
       threshold: 0.4,
+      includeMatches: true,
       ignoreLocation: true,
     });
-  }, []);
+  }, [data, searchKeys]);
 
   return query ? fuse.search(query) : [];
 }

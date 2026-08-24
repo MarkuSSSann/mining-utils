@@ -4,12 +4,19 @@ import { fetchFaq } from "./api/fetch";
 import useFuse from "./hooks/useFuse";
 import type { FaqMessage } from "@types";
 import { useState } from "react";
+import FaqCard from "./components/FaqCard";
 
 export default function Faq() {
   const [query, setQuery] = useState("");
   const { data, error, isPending } = useQuery({
     queryKey: ["faq"],
     queryFn: fetchFaq,
+  });
+
+  const results = useFuse<FaqMessage>({
+    data: data ?? [],
+    query,
+    searchKeys: ["answer", "question"],
   });
 
   if (isPending) {
@@ -20,14 +27,10 @@ export default function Faq() {
     return <p role="alert">Unable to load FAQ: {error.message}</p>;
   }
 
-  const results = useFuse<FaqMessage>({
-    data,
-    query,
-    searchKeys: ["answer", "question"],
-  });
-
   const displayItems =
-    results.length > 0 ? results.map(({ item }) => item) : data;
+    results.length > 0 ?
+      results
+    : data.map((data) => ({ item: data, refIndex: 0 }));
 
   return (
     <>
@@ -49,13 +52,9 @@ export default function Faq() {
           </SearchField>
         </Card.Header>
       </Card>
-      {displayItems.map((message) => (
-        <Card key={message.id} className="gap-1">
-          <Card.Header className="text-xl font-bold">
-            Q: {message.question}
-          </Card.Header>
-          <Card.Content>A: {message.answer}</Card.Content>
-        </Card>
+
+      {displayItems.map((result) => (
+        <FaqCard result={result} />
       ))}
     </>
   );
