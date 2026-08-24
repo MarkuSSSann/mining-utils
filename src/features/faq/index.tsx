@@ -1,59 +1,35 @@
 import { useQuery } from "@tanstack/react-query";
-import { Card, Label, SearchField } from "@heroui/react";
+import { Card } from "@heroui/react";
 import { fetchFaq } from "./api/fetch";
-import useFuse from "./hooks/useFuse";
-import type { FaqMessage } from "@types";
-import { useState } from "react";
 import FaqCard from "./components/FaqCard";
+import Search from "./components/Search";
+import { useAtomValue } from "jotai";
+import { getSearchResultAtom } from "./context/search";
 
 export default function Faq() {
-  const [query, setQuery] = useState("");
   const { data, error, isPending } = useQuery({
     queryKey: ["faq"],
     queryFn: fetchFaq,
   });
+  const displayItems = useAtomValue(getSearchResultAtom);
 
-  const results = useFuse<FaqMessage>({
-    data: data ?? [],
-    query,
-    searchKeys: ["answer", "question"],
-  });
-
-  if (isPending) {
-    return <p>Loading FAQ...</p>;
-  }
-
-  if (error) {
-    return <p role="alert">Unable to load FAQ: {error.message}</p>;
-  }
-
-  const displayItems =
-    results.length > 0 ?
-      results
-    : data.map((data) => ({ item: data, refIndex: 0 }));
+  if (isPending) return <p>Loading FAQ...</p>;
+  if (error) return <p role="alert">Unable to load FAQ: {error.message}</p>;
 
   return (
     <>
       <Card>
-        <Card.Header className="flex flex-row justify-between">
-          <div>
-            <Card.Title className="text-2xl pb-2">FAQ</Card.Title>
-            <Card.Description>
-              Frequently asked questions about Mining Utils.
-            </Card.Description>
-          </div>
-          <SearchField name="search" value={query} onChange={setQuery}>
-            <Label>Search</Label>
-            <SearchField.Group>
-              <SearchField.SearchIcon />
-              <SearchField.Input className="w-70" placeholder="Search..." />
-              <SearchField.ClearButton />
-            </SearchField.Group>
-          </SearchField>
+        <Card.Header>
+          <Card.Title className="text-2xl">FAQ</Card.Title>
+          <Card.Description>
+            Frequently asked questions about Prison. If u didn't find an answer,
+            ask me in game on DM in Discord - MarkuSSSan.
+          </Card.Description>
         </Card.Header>
+        <Search data={data} />
       </Card>
 
-      {displayItems.map((result) => (
+      {displayItems?.map((result) => (
         <FaqCard result={result} />
       ))}
     </>

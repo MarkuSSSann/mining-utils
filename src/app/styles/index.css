@@ -32,6 +32,14 @@
   .button {
     @apply rounded-lg;
   }
+
+  .search-field__group {
+    @apply rounded-lg;
+  }
+
+  .toast {
+    @apply rounded-lg;
+  }
 }
 
 mark {
