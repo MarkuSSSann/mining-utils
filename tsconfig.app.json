@@ -28,7 +28,8 @@
       "@types": ["./src/types"],
       "@features/*": ["./src/features/*"],
       "@data/*": ["./src/data/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"]
     }
   },
   "include": ["src"]

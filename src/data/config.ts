@@ -1,4 +1,7 @@
 import type { NavItem, VoteLink } from "@types";
+import sessionImage from "@assets/session-img.png";
+import voteImage from "@assets/vote-img.png";
+import faqImage from "@assets/faq-img.jpg";
 
 export const RESOURCES = [
   "money",
@@ -46,7 +49,7 @@ export const NAV_ITEMS: NavItem[] = [
     path: "/sessions",
     category: "Analytics",
     icon: "mdi:timelapse",
-    image: "/session-img.png",
+    image: sessionImage,
   },
   {
     id: "voting",
@@ -55,7 +58,7 @@ export const NAV_ITEMS: NavItem[] = [
     path: "/voting",
     category: "Utils",
     icon: "mdi:checkbox-outline",
-    image: "/vote-img.png",
+    image: voteImage,
   },
   {
     id: "faq",
@@ -64,7 +67,7 @@ export const NAV_ITEMS: NavItem[] = [
     path: "/faq",
     category: "Utils",
     icon: "mdi:chat-question-outline",
-    image: "/faq-img.jpg",
+    image: faqImage,
   },
 ] as const;
 
