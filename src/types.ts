@@ -57,4 +57,9 @@ export type VoteLink = {
   link: string;
 };
 
-export type FaqMessage = zod.infer<typeof FaqMessageSchema>;
+export type FaqResponse = zod.infer<typeof FaqMessageSchema>;
+
+export type FaqMessage = FaqResponse & {
+  plainAnswer: string;
+  plainQuestion: string;
+};

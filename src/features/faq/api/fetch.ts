@@ -1,7 +1,7 @@
 import { FaqMessageSchema } from "@data/schemas";
-import type { FaqMessage } from "@types";
+import type { FaqResponse } from "@types";
 
-export async function fetchFaq(): Promise<FaqMessage[]> {
+export async function fetchFaq(): Promise<FaqResponse[]> {
   const response = await fetch("/faq.json");
 
   if (!response.ok) {

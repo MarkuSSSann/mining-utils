@@ -9,7 +9,7 @@ type StringValueKeys<T> = {
 type Props<T> = {
   data: T[];
   query: string;
-  searchKeys: Extract<StringValueKeys<T>, string>[];
+  searchKeys: { name: Extract<StringValueKeys<T>, string>; weight: number }[];
 };
 
 export default function useFuse<T>({ data, query, searchKeys }: Props<T>) {
