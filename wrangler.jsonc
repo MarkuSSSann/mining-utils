@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mining-utils",
+  "pages_build_output_dir": "dist",
+  "compatibility_date": "2026-08-25",
+  "r2_buckets": [
+    {
+      "binding": "FAQ_BUCKET",
+      "bucket_name": "mining-utils-bucket",
+    },
+  ],
+}
