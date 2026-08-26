@@ -1,6 +1,16 @@
+allowBuilds:
+  esbuild: true
+  workerd: true
 minimumReleaseAgeExclude:
   - '@tanstack/react-router@1.170.32'
   - '@tanstack/router-core@1.171.27'
   - '@tanstack/router-generator@1.167.33'
   - '@tanstack/router-plugin@1.168.35'
   - '@types/react-dom@19.2.5'
+  - '@tanstack/eslint-plugin-query@5.102.5'
+  - '@tanstack/query-core@5.102.5'
+  - '@tanstack/react-query@5.102.5'
+  - eslint-plugin-react-refresh@0.5.5
+  - hono@4.13.5
+  - miniflare@5.20260825.0-alpha
+  - wrangler@4.126.0

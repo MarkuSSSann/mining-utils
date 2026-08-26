@@ -7,6 +7,7 @@
     "types": ["vite/client"],
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,
+    "strict": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -27,7 +28,8 @@
       "@types": ["./src/types"],
       "@features/*": ["./src/features/*"],
       "@data/*": ["./src/data/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"]
     }
   },
   "include": ["src"]
