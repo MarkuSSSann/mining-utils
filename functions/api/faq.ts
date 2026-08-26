@@ -10,9 +10,12 @@ app.get(
     cacheControl: "public, max-age=300, s-maxage=3600",
   }),
   async (c) => {
+    console.log("object :>> ", c.env.UTILS_BUCKET);
     const object = await c.env.UTILS_BUCKET.get("faq.json");
-
-    if (!object) return c.json({ error: "FAQ file not found" }, 404);
+    if (!object) {
+      console.error("no data to display");
+      return c.json({ error: "FAQ file not found" }, 404);
+    }
 
     return c.body(object.body, 200, {
       "Content-Type": "application/json; charset=utf-8",
@@ -26,4 +29,11 @@ app.onError((err, c) => {
   return c.json({ error: "Internal Server Error", details: err.message }, 500);
 });
 
-export const onRequest = app.fetch;
+export const onRequest: PagesFunction<Env> = (context) => {
+  const executionContext = {
+    waitUntil: context.waitUntil.bind(context),
+    passThroughOnException: context.passThroughOnException.bind(context),
+    props: {},
+  };
+  return app.fetch(context.request, context.env, executionContext);
+};
