@@ -10,12 +10,13 @@ app.get(
     cacheControl: "public, max-age=300, s-maxage=3600",
   }),
   async (c) => {
-    const object = await c.env.FAQ_BUCKET.get("faq.json");
+    const object = await c.env.UTILS_BUCKET.get("faq.json");
 
     if (!object) return c.json({ error: "FAQ file not found" }, 404);
 
     return c.body(object.body, 200, {
       "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "public, max-age=300",
     });
   },
 );
